@@ -81,7 +81,7 @@ export const getTime = (time: Date) => {
     return inputDate.toDateString()
   }
   
-  export const getHumanReadableDate = (date: string, weekday?: string) => {
+  export const getHumanReadableDate = (date: string, weekday?: true) => {
     if (!date) {
       return
     }
