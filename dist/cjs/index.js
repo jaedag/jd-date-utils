@@ -11,7 +11,7 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.addMinutes = exports.addHours = exports.getTodayTime = exports.isToday = exports.last3Weeks = exports.getWeekNumber = exports.getMemberDob = exports.getHumanReadableDate = exports.parseDate = exports.parseNeoTime = exports.getMondayThisWeek = exports.parseTimeToDate = exports.setTime = exports.getTime = void 0;
 var getTime = function (time) {
-    return time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds();
+    return "".concat(time.getHours(), ":").concat(time.getMinutes(), ":").concat(time.getSeconds());
 };
 exports.getTime = getTime;
 var setTime = function (timeArray) {
@@ -50,12 +50,12 @@ var parseNeoTime = function (timestamp) {
     var mins = data.getMinutes();
     var secs = data.getSeconds();
     if (hrs <= 9)
-        hrs = parseInt("0" + hrs);
+        hrs = parseInt("0".concat(hrs));
     if (mins < 10)
-        mins = parseInt("0" + mins);
+        mins = parseInt("0".concat(mins));
     if (secs < 10)
-        secs = parseInt("0" + secs);
-    var postTime = hrs + ":" + mins + ":" + secs;
+        secs = parseInt("0".concat(secs));
+    var postTime = "".concat(hrs, ":").concat(mins, ":").concat(secs);
     return postTime;
 };
 exports.parseNeoTime = parseNeoTime;
@@ -80,7 +80,7 @@ var parseDate = function (date) {
     }
     if (Math.floor(differenceInDays) < 7) {
         // Date equals yesterday's date
-        return Math.floor(differenceInDays) + " days ago";
+        return "".concat(Math.floor(differenceInDays), " days ago");
     }
     return inputDate.toDateString();
 };
