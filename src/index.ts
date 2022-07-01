@@ -38,13 +38,15 @@ export const getTime = (time: Date) => {
     if (!timestamp) {
       return
     }
+
+
     const data = new Date(timestamp)
-    let hrs = data.getHours()
-    let mins = data.getMinutes()
-    let secs = data.getSeconds()
-    if (hrs <= 9) hrs = parseInt(`0${hrs}`)
-    if (mins < 10) mins = parseInt(`0${mins}`)
-    if (secs < 10) secs = parseInt(`0${secs}`)
+    let hrs:string|number = data.getHours()
+    let mins:string|number = data.getMinutes()
+    let secs:string|number = data.getSeconds()
+    if (hrs <= 9) hrs = `0${hrs}`
+    if (mins < 10) mins = `0${mins}`
+    if (secs < 10) secs = `0${secs}`
     const postTime = `${hrs}:${mins}:${secs}`
     return postTime
   }
