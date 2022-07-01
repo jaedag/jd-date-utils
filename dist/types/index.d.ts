@@ -4,7 +4,7 @@ export declare const parseTimeToDate: (timeString: string) => string;
 export declare const getMondayThisWeek: (date: Date) => Date;
 export declare const parseNeoTime: (timestamp: string) => string | undefined;
 export declare const parseDate: (date: string) => string;
-export declare const getHumanReadableDate: (date: string, weekday?: string) => string | undefined;
+export declare const getHumanReadableDate: (date: string, weekday?: true) => string | undefined;
 declare type MemberType = {
     dob: {
         date: string;
