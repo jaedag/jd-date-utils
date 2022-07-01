@@ -43,11 +43,11 @@ export var parseNeoTime = function (timestamp) {
     var mins = data.getMinutes();
     var secs = data.getSeconds();
     if (hrs <= 9)
-        hrs = parseInt("0".concat(hrs));
+        hrs = "0".concat(hrs);
     if (mins < 10)
-        mins = parseInt("0".concat(mins));
+        mins = "0".concat(mins);
     if (secs < 10)
-        secs = parseInt("0".concat(secs));
+        secs = "0".concat(secs);
     var postTime = "".concat(hrs, ":").concat(mins, ":").concat(secs);
     return postTime;
 };
