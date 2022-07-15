@@ -66,7 +66,7 @@ export var parseDate = function (date) {
         // Date equals today's date
         return 'Today';
     }
-    if (Math.floor(differenceInDays) === 1) {
+    if (differenceInDays <= 1) {
         // Date equals yesterday's date
         return 'Yesterday';
     }
