@@ -71,7 +71,7 @@ export const getTime = (time: Date) => {
       // Date equals today's date
       return 'Today'
     }
-    if (differenceInDays <= 1) {
+    if (differenceInDays < 2) {
       // Date equals yesterday's date
       return 'Yesterday'
     }
