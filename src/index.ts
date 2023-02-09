@@ -124,7 +124,9 @@ export const getTime = (time: Date) => {
 
     const currentdate: any = date ? new Date(date) : new Date()
     const oneJan: any = new Date(currentdate.getFullYear(), 0, 1)
-    const adjustedForMonday = 8 - oneJan.getDay() // Checking the number of days till Monday when the week starts
+    let adjustedForMonday = 8 - oneJan.getDay() // Checking the number of days till Monday when the week starts
+    if (adjustedForMonday <= 0) adjustedForMonday += 7;
+    if (adjustedForMonday >= 8) adjustedForMonday -= 7;
     oneJan.setDate(oneJan.getDate() + adjustedForMonday)
     const numberOfDays = Math.floor(
       (currentdate - oneJan) / (24 * 60 * 60 * 1000)
