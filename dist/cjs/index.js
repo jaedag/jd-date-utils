@@ -119,6 +119,10 @@ var getWeekNumber = function (date) {
     var currentdate = date ? new Date(date) : new Date();
     var oneJan = new Date(currentdate.getFullYear(), 0, 1);
     var adjustedForMonday = 8 - oneJan.getDay(); // Checking the number of days till Monday when the week starts
+    if (adjustedForMonday <= 0)
+        adjustedForMonday += 7;
+    if (adjustedForMonday >= 8)
+        adjustedForMonday -= 7;
     oneJan.setDate(oneJan.getDate() + adjustedForMonday);
     var numberOfDays = Math.floor((currentdate - oneJan) / (24 * 60 * 60 * 1000));
     var result = Math.ceil(numberOfDays / 7);
