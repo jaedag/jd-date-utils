@@ -1,15 +1,19 @@
 
 
 
-export const getTime = (time: Date) => {
-    return `${time.getHours()}:${time.getMinutes()}:${time.getSeconds()}`
-  }
+export const getTime = (time: Date): string => {
+  const hours = time.getHours().toString().padStart(2, '0');
+  const minutes = time.getMinutes().toString().padStart(2, '0');
+  const seconds = time.getSeconds().toString().padStart(2, '0');
+  return `${hours}:${minutes}:${seconds}`;
+}
   
   export const setTime = (timeArray: number[]) => {
     const now = new Date()
     now.setHours(timeArray[0])
     now.setMinutes(timeArray[1])
-    now.setMilliseconds(timeArray[2])
+    now.setSeconds(timeArray[2])
+    now.setMilliseconds(timeArray[3])
   
     return now
   }
